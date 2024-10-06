@@ -1,5 +1,28 @@
 from typing import Optional
 
-class MigrationPath:
+from wildlife_tracker.habitat_management.habitat import Habitat
 
-    pass
+class MigrationPath:
+    def __init__(
+        self,
+        path_id: int,
+        species: str,
+        start_location: Habitat,
+        destination: Habitat,
+        duration: Optional[int] = None
+    ):
+        self.path_id = path_id
+        self.species = species
+        self.start_location = start_location
+        self.destination = destination
+        self.duration = duration
+        self.paths: dict[int, MigrationPath] = {}
+
+    def create_migration_path(
+        self,
+        species: str,
+        start_location: Habitat,
+        destination: Habitat,
+        duration: Optional[int] = None
+    ) -> None:
+        pass
